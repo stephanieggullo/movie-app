@@ -1,0 +1,15 @@
+<div class="container mb-5">
+  <h3 class="title"> {{ title }} </h3>
+  <hr class="no-margin"/>
+
+  <div class="row flex" >
+    <div class="flex container m-3">
+      <div *ngFor="let movie of allMovies"
+        class="img"
+        [ngStyle]="{
+          'background-image':'url('+ (movie | movieImg) + ')' }" > 
+      <p class="title-movie"><small class="text">{{movie.title}}</small></p>
+    </div>
+         </div>
+  </div>
+</div>

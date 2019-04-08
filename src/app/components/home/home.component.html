@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-fluid animated fadeIn fast">
+    <h1 class="container display-3">
+        Movies <span class="text-muted display-4">app </span> 
+      </h1>
+</div>
+
+<app-movies [allMovies]='billboards | slice:0:6'
+  title="Billboards">
+</app-movies>
+
+<app-movies [allMovies]='topMovies | slice:0:6'
+  title="Popular movies">
+</app-movies>
+
+<app-movies [allMovies]='moviesKids | slice:0:6'
+  title="Movies for Kids">
+</app-movies>

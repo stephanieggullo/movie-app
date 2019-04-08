@@ -1,0 +1,41 @@
+.img {
+    width:280px;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loop-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text{
+    color: white;
+}
+
+.title-movie {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(14, 13, 13, 0.596);
+}
+
+.card-1 {
+    padding: 5px;
+}
+
+.no-margin {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    padding-left: 45px;
+}

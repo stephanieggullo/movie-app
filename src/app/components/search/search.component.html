@@ -1,0 +1,32 @@
+<div class="container main-container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label> Search </label>
+          <input [(ngModel)]="inputText"
+            (keyup.enter)="searchMovie()"
+            type="text"
+            name="inputText"
+            class="form-control"
+            placeholder="seacrh....">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="card-columns">
+
+        <div *ngFor="let movie of movieService.movies"
+          class="card">
+          <img [src]="movie| movieImg" class="card-img-top" [alt]="movie.original_title">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.original_title}}</h5>
+            <p class="card-text text-justify"> {{ movie.overview | slice:0:250}}.</p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>
