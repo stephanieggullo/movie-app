@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MoviesService } from "src/app/services/movies.service";
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: "app-search",
@@ -8,21 +10,26 @@ import { MoviesService } from "src/app/services/movies.service";
 })
 export class SearchComponent implements OnInit {
   inputText: string;
-  wantedMovie: any;
 
-  constructor(public movieService: MoviesService) {}
+  constructor(public movieService: MoviesService, public router: ActivatedRoute) {
+    this.router.params.subscribe( params => {
+      this.inputText = params['text'];
+      this.searchMovie();
+    });
+  }
 
   ngOnInit() {}
 
   searchMovie() {
-    if (this.inputText.length == 0) {
-      return;
+    if(this.inputText){
+      if (this.inputText.length == 0) {
+        return;
+      }
     }
+    this.movieService.movieSearch(this.inputText)
+      .subscribe();
 
-    this.movieService.movieSearch(this.inputText).subscribe(data => {
-      this.wantedMovie = data;
-      console.log("movies", this.wantedMovie);
-    });
     console.log(this.inputText);
+    this.inputText = '';
   }
 }
