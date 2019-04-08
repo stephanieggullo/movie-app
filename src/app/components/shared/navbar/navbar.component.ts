@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
       return;
     }
     this.router.navigate(['search', this.inputTxt]);
-    this.inputTxt = '';
+    // this.inputTxt = '';
   }
 
 }

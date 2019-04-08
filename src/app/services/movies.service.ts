@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
 export class MoviesService {
   private apiKey: string = "3d83068242df1cce6c25a35655f05f3f";
   private movieUrl: string = "https://api.themoviedb.org/3";
-  movies: any;
+  allMovies: any;
 
   constructor(private http: HttpClient) {}
 
@@ -35,9 +35,10 @@ export class MoviesService {
   movieSearch( inputText: string) {
     const url = `${this.movieUrl}/search/movie?query=${inputText}&sort_by=popularity.desc&api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
     return this.http.jsonp(url, '').pipe(map( res =>  {
-      this.movies = res["results"] ;
-      return res["results"] }
-      ));
+      this.allMovies = res["results"] ;
+     // return res["results"] 
+      }
+    ));
   }
 
   getMovieDetail( id: string) {

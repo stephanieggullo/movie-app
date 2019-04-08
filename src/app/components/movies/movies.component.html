@@ -4,8 +4,9 @@
 
   <div class="row flex" >
     <div class="flex container m-3">
-      <div *ngFor="let movie of allMovies"
-        [routerLink]="['/movieDetail', movie.id, 'home']" 
+      <div
+        *ngFor="let movie of allMovies"
+        [routerLink]="['/movieDetail', movie.id, 'pag', search]" 
         class="img"
         [ngStyle]="{
           'background-image':'url('+ (movie | movieImg) + ')' }" > 

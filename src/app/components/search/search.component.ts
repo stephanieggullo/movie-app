@@ -29,6 +29,6 @@ export class SearchComponent implements OnInit {
     this.movieService.movieSearch(this.inputText)
       .subscribe();
 
-    this.inputText = '';
+    // this.inputText = '';
   }
 }

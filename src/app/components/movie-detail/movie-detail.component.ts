@@ -10,9 +10,18 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MovieDetailComponent implements OnInit {
 
   movieDetail: any;
+  backTo: string = '';
+  searchtext: string = '';
 
-  constructor( public router: ActivatedRoute, public movieService: MoviesService) { 
+  constructor( public router: ActivatedRoute, public movieService: MoviesService) {
     this.router.params.subscribe( params => {
+
+      console.log(params);
+      this.backTo = params['pag'];
+
+      if(params['search']){
+        this.searchtext = params['search'];
+      }
 
       this.movieService.getMovieDetail( params['id'])
         .subscribe( item => {

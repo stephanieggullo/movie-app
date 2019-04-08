@@ -23,6 +23,10 @@
         Votes average: <span class="badge badge-primary">{{ movieDetail.vote_average }}</span>
       </p>
 
+      <button type="button" class="btn btn-outline-danger"
+          [routerLink]="['/'+backTo, 'search']" >
+        Back
+      </button>
     </div>
 
   </div>
