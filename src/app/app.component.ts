@@ -13,7 +13,6 @@ export class AppComponent {
   title = 'movie-app';
 
   constructor( ) {
-    // this.movieService.getTopMovies()
-    //   .subscribe( data => console.log(data));
+
   }
 }

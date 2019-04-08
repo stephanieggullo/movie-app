@@ -39,4 +39,9 @@ export class MoviesService {
       return res["results"] }
       ));
   }
+
+  getMovieDetail( id: string) {
+    const url = `${this.movieUrl}/movie/${ id }?api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
+    return this.http.jsonp(url, "").pipe(map(res => res));
+  }
 }

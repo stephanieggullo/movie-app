@@ -17,19 +17,19 @@ export class HomeComponent implements OnInit {
     this.movieService.getBillboardMovies()
     .subscribe( data => {
       this.billboards = data;
-      console.log( this.billboards);
+
     });
 
     this.movieService.getTopMovies()
     .subscribe( data => {
       this.topMovies = data;
-      console.log( this.topMovies);
+
     });
 
     this.movieService.getTopMoviesKids()
     .subscribe( data => {
       this.moviesKids = data;
-      console.log( this.moviesKids);
+
     });
    }
 
